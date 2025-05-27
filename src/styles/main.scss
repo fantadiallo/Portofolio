@@ -1,0 +1,6 @@
+@use 'bootstrap/scss/bootstrap'; // Import Bootstrap styles
+@use './utils/variables' as *;
+@use './utils/mixins' as *;
+@use './base';
+@use './layout';
+@use './components';
