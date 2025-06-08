@@ -54,11 +54,17 @@ export default function Project3() {
         </p>
         <div className={styles.links}>
           <a
-            href="https://github.com/fantadiallo/pet-adoption-app"
+            href="/projects/project-3"
+            className={styles.link}
+          >
+            View Details
+          </a>
+          <a
+            href="https://github.com/fantadiallo/SemesterProject2"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub /> Code
+            <FaGithub /> Repo
           </a>
           <a
             href="https://petadopt.netlify.app/"

@@ -53,13 +53,23 @@ export default function Project2() {
           A fully functional online store built using React, Bootstrap, and SCSS. It features dynamic product pages, a working cart system, and a checkout confirmation flow. The design is responsive and follows clean UI principles.
         </p>
         <div className={styles.links}>
-          <a href="#project2-details">
+          <a href="/projects/project-2" className={styles.link}>
             View Details
+          </a>
+          <a
+            href="https://github.com/fantadiallo/my-ecommerce-store"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.link}
+          >
+            <FaReact style={{ marginRight: "6px" }} />
+            Repo
           </a>
           <a
             href="https://onlinestore1230.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
+            className={styles.link}
           >
             <BiLinkExternal /> Live Site
           </a>

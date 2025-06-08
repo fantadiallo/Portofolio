@@ -24,8 +24,23 @@ export default function Project1Page() {
             Holidaze is a full-featured accommodation booking app built with React, Vite, and Bootstrap.
             Users can browse, book, and manage venues. Venue managers can register,
             create listings, update their profile and view upcoming bookings. 
-            The app includes role-based access, form validation, and real-time data fetching from the Noroff API.
-          </p>
+         </p>
+          <div className={styles.projectLinks}>
+            <a
+              href="https://github.com/fantadiallo/HolidazeSemesterproject"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaGithub /> Code (README)
+            </a>
+            <a
+              href="https://holidazebnb.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BiLinkExternal /> Live Site
+            </a>
+          </div>
         </div>
 
         <div className={styles.imageBox}>

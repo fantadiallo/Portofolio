@@ -28,7 +28,7 @@ export default function Project1() {
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <img src="/projectExam.png" alt="Holidaze Screenshot" />
+          <img src="/Holidaze.png" alt="Holidaze Screenshot" />
         </motion.div>
 
         <motion.div
