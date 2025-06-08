@@ -22,8 +22,8 @@ export default function Header() {
         </button>
 
         <nav className={`${styles.nav} ${menuOpen ? styles.open : ""}`}>
-          <a href="#about" className={styles.link}>About</a>
-          <a href="#skills" className={styles.link}>Skills</a>
+          <Link to="#about" className={styles.link}>About</Link>
+          <Link to="/#skills" className={styles.link}>Skills</Link>
 
           <div className={`${styles.dropdown} ${dropdownOpen ? styles.dropdownOpen : ""}`}>
             <button
@@ -34,13 +34,13 @@ export default function Header() {
               Projects
             </button>
             <div className={`${styles.dropdownMenu} ${dropdownOpen ? styles.show : ""}`}>
-              <Link to="/projects/project-1" className={styles.dropdownItem}>E-Commerce Store</Link>
-              <Link to="/projects/project-2" className={styles.dropdownItem}>Project 2</Link>
-              <Link to="/projects/project-3" className={styles.dropdownItem}>Project 3</Link>
+              <Link to="/projects/project-1" className={styles.dropdownItem}>Holidaze Booking</Link>
+              <Link to="/projects/project-2" className={styles.dropdownItem}>Modern Online Store</Link>
+              <Link to="/projects/project-3" className={styles.dropdownItem}>Pet Care Platform</Link>
             </div>
           </div>
 
-          <a href="#contact" className={styles.link}>Contact</a>
+          <Link to="#contact" className={styles.link}>Contact</Link>
         </nav>
       </div>
     </header>
