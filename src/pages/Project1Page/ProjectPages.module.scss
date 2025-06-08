@@ -1,119 +1,145 @@
 @use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
 
 .projectSection {
   width: 100%;
-  min-height: 100vh;
-  padding: 4rem 2rem;
+  padding: 3rem 1.5rem;
   background: $dark-bg;
   color: $light-text;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: 3rem;
 
-  .title {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: $accent-primary;
-    animation: fadeIn 1s ease;
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .title {
+      font-size: 2.5rem;
+      color: $accent-primary;
+      text-align: center;
+    }
+
+    .copyBtn {
+      background: $accent-primary;
+      color: $dark-bg;
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: lighten($accent-primary, 10%);
+      }
+    }
   }
 
   .projectContent {
     display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    max-width: 1100px;
-    width: 100%;
-    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
     align-items: center;
-    flex-wrap: wrap;
-  }
 
-  .description {
-    flex: 1;
-    text-align: left;
-    animation: slideInLeft 1s ease;
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      color: $light-text;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
-    .projectLinks {
-      display: flex;
-      gap: 1.5rem;
+    .description {
+      flex: 1;
+      max-width: 550px;
+      text-align: left;
 
-      a {
-        background: $accent-primary;
-        color: $dark-bg;
-        padding: 0.7rem 1.2rem;
-        border-radius: 8px;
-        font-weight: 600;
+      p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: $light-text;
+      }
+    }
+
+    .imageBox {
+      flex: 1;
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+
+      img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+      }
+
+      .imageOverlay {
+        position: absolute;
+        inset: 0;
         display: flex;
+        justify-content: center;
         align-items: center;
-        gap: 0.5rem;
-        text-decoration: none;
-        transition: all 0.3s ease;
+        gap: 1.2rem;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        border-radius: 12px;
+        transition: opacity 0.3s ease;
 
-        &:hover {
-          background: lighten($accent-primary, 10%);
+        a {
+          background: $accent-primary;
+          color: white;
+          font-size: 1.4rem;
+          padding: 0.6rem;
+          border-radius: 50%;
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
-    }
-  }
 
-  .imageBox {
-    flex: 1;
-    position: relative;
-    animation: slideInRight 1s ease;
-
-    img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    }
-
-    .imageOverlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      opacity: 0;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      transition: opacity 0.3s ease;
-
-      a {
-        color: #fff;
-        font-size: 2rem;
-        background: $accent-primary;
-        padding: 0.5rem;
-        border-radius: 50%;
-        transition: transform 0.3s;
-
-        &:hover {
-          transform: scale(1.1);
-        }
+      &:hover .imageOverlay {
+        opacity: 1;
       }
-    }
 
-    &:hover .imageOverlay {
-      opacity: 1;
+      .caption {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: lighten($light-text, 15%);
+      }
     }
   }
 
   .tools {
-    margin-top: 2.5rem;
     display: flex;
-    gap: 2rem;
-    font-size: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 1.8rem;
     color: $accent-primary;
-   
+  }
+
+  .reflection {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: $accent-primary;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
   }
 }
