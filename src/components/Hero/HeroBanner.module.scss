@@ -12,6 +12,36 @@
   align-items: center;
   justify-content: center;
 }
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include respond(md) {
+    justify-content: center;
+  }
+
+  .ctaGithub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    border-radius: 50%;
+    background-color: $light-text;
+    color: $dark-bg;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $accent-primary;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+}
+
 
 .bgAnimation {
   position: absolute;
@@ -135,7 +165,7 @@
     }
 
     &:hover {
-      color: $accent-primary;
+      color: #fff; // or $light-text if that's white
 
       &::after {
         width: 100%;

@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithub } from "react-icons/fa";
 import styles from "./HeroBanner.module.scss";
 
 export default function Hero() {
@@ -21,13 +22,24 @@ export default function Hero() {
             experiences.
           </p>
 
-          <a href="#contact" className={styles.cta}>
-            Get in Touch
-          </a>
+          <div className={styles.ctaGroup}>
+            <a href="#contact" className={styles.cta}>
+              Get in Touch
+            </a>
+            <a
+              href="https://github.com/fantadiallo"
+              className={styles.cta}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub style={{ marginRight: "8px" }} />
+              GitHub
+            </a>
+          </div>
 
           <div className={styles.links}>
             <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
+            <a href="#project1">Projects</a>
             <a href="#contact">Contact</a>
           </div>
         </div>
