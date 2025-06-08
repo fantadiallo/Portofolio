@@ -16,7 +16,7 @@ export default function ContactSection() {
             I’m open to freelance work, collaborations, or full-time roles.
             Let’s connect!
           </p>
-          <p><strong>Email:</strong>fatmbo03@outlook.com</p>
+          <p><strong>Email:</strong>shes.fato@gmail.com</p>
           <p>
             <strong>GitHub:</strong>{" "}
             <a
