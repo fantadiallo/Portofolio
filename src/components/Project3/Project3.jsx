@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaHtml5, FaCss3Alt, FaJsSquare } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaGithub } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 import styles from "../Project1/ProjectShowCase.module.scss";
 
 export default function Project3() {
   return (
-    <section className={styles.projectSection}>
+    <section className={styles.projectSection} id="project3">
       <motion.h2
         className={styles.projectTitle}
         initial={{ opacity: 0, scale: 0.8 }}
@@ -28,7 +28,7 @@ export default function Project3() {
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <img src="/projectAdoption.png" alt="Pet Adoption Screenshot" />
+          <img src="/projectExam.png" alt="Pet Adoption Screenshot" />
         </motion.div>
 
         <motion.div
@@ -50,11 +50,15 @@ export default function Project3() {
         transition={{ delay: 0.3, duration: 1 }}
       >
         <p>
-          A responsive pet adoption web app that allows users to browse pets, filter by type, and apply for adoption. Features admin login, pet management, and dynamic search using the Noroff API. Built with vanilla JavaScript, HTML5, and CSS.
+          A responsive pet adoption web app that allows users to browse pets, filter by type, and apply for adoption. Features admin login, pet management, and dynamic search using the Noroff API. Built with HTML, CSS, and vanilla JavaScript.
         </p>
         <div className={styles.links}>
-          <a href="#project3-details">
-            <FaHtml5 /> View Details
+          <a
+            href="https://github.com/fantadiallo/pet-adoption-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub /> Code
           </a>
           <a
             href="https://petadopt.netlify.app/"
