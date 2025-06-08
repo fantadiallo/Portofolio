@@ -1,0 +1,69 @@
+@use './utils/variables' as *;
+
+// General page-wide defaults
+html,
+body {
+  background-color: $dark-bg !important;
+  color: $light-text !important;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  padding-top: 4rem; // if you have a fixed header
+}
+
+
+a {
+  color: $accent-primary;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: $accent-primary;
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: $accent-primary-hover;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: $light-text;
+  line-height: 1.3;
+}
+
+// Paragraphs
+p {
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+// Lists
+ul {
+  padding-left: 1.25rem;
+}
+
+// Inputs, buttons, etc. (only if needed)
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
