@@ -1,3 +1,10 @@
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
 @mixin respond($breakpoint) {
   @if $breakpoint == sm {
     @media (max-width: 576px) { @content; }
@@ -7,5 +14,8 @@
   }
   @if $breakpoint == lg {
     @media (max-width: 1024px) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (max-width: 1280px) { @content; }
   }
 }
