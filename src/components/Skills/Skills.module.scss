@@ -2,93 +2,103 @@
 @use "../../styles/utils/mixins" as *;
 
 .skillsSection {
-  width: 100%;
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  background: $dark-bg;
-  color: $light-text;
+  background: var(--dark-bg);
+  color: var(--light-text);
+  padding: 6rem 2rem;
   text-align: center;
+
+  @include respond(md) {
+    padding: 4rem 1.5rem;
+  }
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+  margin-bottom: 4rem;
+
+  @include respond(sm) {
+    font-size: 2rem;
+  }
+}
+
+.splitSection {
   display: flex;
   flex-direction: column;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.skillsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+.subheading {
+  font-size: 1.8rem;
+  color: var(--accent-green);
+  font-weight: 600;
+
+  @include respond(sm) {
+    font-size: 1.5rem;
+  }
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0 0.5rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+}
+
+.skillCard {
+  background: var(--card-bg, #1e1e1e);
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  overflow: hidden;
 
-  .heading {
-    font-size: 2.2rem;
-    margin-bottom: 3rem;
-    color: $accent-primary;
-    animation: fadeInDown 0.8s ease-out;
-  }
-
-  .skillsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-    justify-items: center;
-    align-items: center;
-    padding: 0 1rem;
-  }
-
-  .skillCard {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-    border-radius: 12px;
-    width: 110px;
-    height: 110px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    animation: popUp 0.6s ease forwards;
-    opacity: 0;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-6px) scale(1.03);
-    }
-
-    .icon {
-      font-size: 2.2rem;
-      color: $accent-primary;
-      margin-bottom: 0.5rem;
-    }
-
-    .label {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    // Add animation delays using nth-child
-    @for $i from 1 through 12 {
-      &:nth-child(#{$i}) {
-        animation-delay: #{0.1s * $i};
-      }
-    }
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(0, 255, 128, 0.3);
   }
 }
 
-/* Animations */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+.icon {
+  font-size: 3rem;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+
+  @include respond(sm) {
+    font-size: 2.4rem;
   }
 }
 
-@keyframes popUp {
-  from {
-    opacity: 0;
-    transform: scale(0.8) translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: var(--light-text);
+
+  @include respond(sm) {
+    font-size: 0.95rem;
   }
 }
