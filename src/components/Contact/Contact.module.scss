@@ -1,0 +1,79 @@
+@use "../../styles/utils/variables" as *;
+
+.contactSection {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: $dark-bg;
+  color: $light-text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info {
+    flex: 1 1 300px;
+    max-width: 500px;
+
+    h2 {
+      font-size: 2rem;
+      color: $accent-primary;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+
+      a {
+        color: $accent-primary;
+        text-decoration: underline;
+
+        &:hover {
+          color: lighten($accent-primary, 10%);
+        }
+      }
+    }
+  }
+
+  .form {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: $light-text;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.75rem 1rem;
+      background-color: $accent-primary;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+
+      &:hover {
+        background-color: darken($accent-primary, 10%);
+      }
+    }
+  }
+}
