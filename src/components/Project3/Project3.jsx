@@ -1,49 +1,69 @@
 import React from "react";
 import { motion } from "framer-motion";
-import styles from "../Project1/Project1.module.scss";
+import { FaHtml5, FaCss3Alt, FaJsSquare } from "react-icons/fa";
+import { BiLinkExternal } from "react-icons/bi";
+import styles from "../Project1/ProjectShowCase.module.scss";
 
 export default function Project3() {
   return (
     <section className={styles.projectSection}>
-      <motion.h2 
+      <motion.h2
         className={styles.projectTitle}
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
-        My Project Title
+        Pet Adoption Website
       </motion.h2>
 
-      <div className={styles.projectVisuals}>
+      <motion.div
+        className={styles.projectGrid}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
         <motion.div
           className={styles.imageContainer}
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, x: -80, scale: 0.9 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <img src="https://via.placeholder.com/600x400" alt="Page Screenshot" />
+          <img src="/projectAdoption.png" alt="Pet Adoption Screenshot" />
         </motion.div>
 
         <motion.div
-          className={styles.videoContainer}
-          initial={{ opacity: 0, x: 30 }}
+          className={styles.tools}
+          initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <img src="https://via.placeholder.com/600x400" alt="Video Screenshot" />
+          <FaHtml5 title="HTML5" />
+          <FaCss3Alt title="CSS3" />
+          <FaJsSquare title="JavaScript" />
         </motion.div>
-      </div>
+      </motion.div>
 
-      <motion.div 
+      <motion.div
         className={styles.projectDescription}
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
+        transition={{ delay: 0.3, duration: 1 }}
       >
-        <p>This is a short description of the project, its purpose and what tech was used.</p>
-        <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-          Visit Project →
-        </a>
+        <p>
+          A responsive pet adoption web app that allows users to browse pets, filter by type, and apply for adoption. Features admin login, pet management, and dynamic search using the Noroff API. Built with vanilla JavaScript, HTML5, and CSS.
+        </p>
+        <div className={styles.links}>
+          <a href="#project3-details">
+            <FaHtml5 /> View Details
+          </a>
+          <a
+            href="https://petadopt.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BiLinkExternal /> Live Site
+          </a>
+        </div>
       </motion.div>
     </section>
   );
