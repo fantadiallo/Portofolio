@@ -1,13 +1,30 @@
+import { useEffect, useState } from "react";
 import ContactSection from "../../components/Contact/Contact";
 import Hero from "../../components/Hero/HeroBanner";
 import Project1 from "../../components/Project1/Project1";
 import Project2 from "../../components/Project2/Project2";
 import Project3 from "../../components/Project3/Project3";
 import SkillsSection from "../../components/Skills/Skills";
+import styles from "./Home.module.scss";
 
 export default function Home() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToHero = () => {
+    document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <main>
+    <main className={styles.pageWrapper}>
       <section id="hero">
         <Hero />
       </section>
@@ -31,6 +48,12 @@ export default function Home() {
       <section id="contact">
         <ContactSection />
       </section>
+
+      {showScrollTop && (
+        <button className={styles.scrollTopButton} onClick={scrollToHero}>
+          ↑
+        </button>
+      )}
     </main>
   );
 }

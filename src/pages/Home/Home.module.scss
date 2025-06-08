@@ -1,0 +1,26 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+.scrollTopButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: $accent-primary;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: darken($accent-primary, 10%);
+    transform: translateY(-3px);
+  }
+
+  @include respond(md) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
