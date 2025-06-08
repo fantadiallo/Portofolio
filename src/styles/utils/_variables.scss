@@ -1,7 +1,7 @@
-$primary: #1E40AF;
-$accent: #A855F7;
-$light: #F8F9FA;
-$text-dark: #212529;
 
-$font-base: 'Inter', sans-serif;
-$font-heading: 'Poppins', sans-serif;
+$dark-bg:              #121212 !default;  // deep charcoal for body
+$nav-bg-light:          #E5E7EB !default;  // off-white text
+$dark-text:         #1f1f1f !default; 
+$light-text:         #E9ECEF !default;  // very pale gray (Bootstrap’s “light”)
+$accent-primary:       #20C997 !default;  // teal
+$accent-primary-hover: #1AAE87 !default;  // darker teal
