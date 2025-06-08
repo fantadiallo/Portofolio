@@ -1,0 +1,188 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+
+.header {
+  background-color: $dark-bg;
+  color: $light-text;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.4s ease;
+}
+
+.container {
+  @include flex(space-between, center);
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: $accent-primary;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: lighten($accent-primary, 10%);
+  }
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: $light-text;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+
+  @include respond(md) {
+    display: block;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  @include respond(md) {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: $dark-bg;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+  }
+}
+
+.open {
+  @include respond(md) {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    padding: 1rem 0;
+  }
+}
+
+.link {
+  color: $light-text;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 0.2rem;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    color: $accent-primary;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: $accent-primary;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  @include respond(md) {
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.dropdown {
+  position: relative;
+
+  button {
+    background: none;
+    border: none;
+    font: inherit;
+    color: $light-text;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: $accent-primary;
+    }
+  }
+
+  &.dropdownOpen {
+    .dropdownMenu {
+      display: flex;
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+
+  @include respond(md) {
+    width: 100%;
+  }
+}
+
+.dropdownMenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: $dark-bg; // 👈 changed here
+  padding: 0.5rem 0;
+  min-width: 160px;
+  opacity: 0;
+  transform: scaleY(0.95);
+  transform-origin: top;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+
+  @include respond(md) {
+    position: static;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+    margin-left: 1rem;
+  }
+}
+
+.dropdownItem {
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  color: $light-text;
+  font-weight: 500;
+  transition: background 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: $accent-primary;
+  }
+
+  @include respond(md) {
+    width: 100%;
+  }
+}
+
