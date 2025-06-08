@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaSass, FaBootstrap, FaGitAlt } from "react-icons/fa";
+import { FaReact, FaSass, FaBootstrap } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
-import styles from  "../Project1/ProjectShowCase.module.scss";
+import styles from "../Project1/ProjectShowCase.module.scss";
 
 export default function Project2() {
   return (
@@ -13,7 +13,7 @@ export default function Project2() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        Inventory Management System
+        E-Commerce Store
       </motion.h2>
 
       <motion.div
@@ -28,7 +28,7 @@ export default function Project2() {
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <img src="/projectInventory.png" alt="Inventory System Screenshot" />
+          <img src="/onlinestore.png" alt="E-Commerce Screenshot" />
         </motion.div>
 
         <motion.div
@@ -40,7 +40,6 @@ export default function Project2() {
           <FaReact title="React" />
           <FaSass title="SCSS" />
           <FaBootstrap title="Bootstrap" />
-          <FaGitAlt title="Git" />
         </motion.div>
       </motion.div>
 
@@ -51,14 +50,14 @@ export default function Project2() {
         transition={{ delay: 0.3, duration: 1 }}
       >
         <p>
-          This inventory system allows businesses to track stock, log daily usage, and approve updates through an admin dashboard. Built with React, SCSS, Bootstrap, and integrated with Supabase. It supports order reports, stock history, and multi-user roles for team management.
+          A fully functional online store built using React, Bootstrap, and SCSS. It features dynamic product pages, a working cart system, and a checkout confirmation flow. The design is responsive and follows clean UI principles.
         </p>
         <div className={styles.links}>
           <a href="#project2-details">
-            <FaReact /> View Details
+            View Details
           </a>
           <a
-            href="https://inventory-gambia.netlify.app/"
+            href="https://onlinestore1230.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
