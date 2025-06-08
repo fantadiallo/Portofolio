@@ -18,6 +18,7 @@ const toolsSkills = [
   { name: "Git", icon: <FaIcons.FaGitAlt /> },
   { name: "Figma", icon: <SiIcons.SiFigma /> },
   { name: "Node.js", icon: <SiIcons.SiNodedotjs /> },
+  { name: "REST API", icon: <SiIcons.SiApachenetbeanside /> }, // or another API icon
 ];
 
 const animationVariant = {
