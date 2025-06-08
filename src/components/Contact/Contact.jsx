@@ -7,16 +7,23 @@ export default function ContactSection() {
       <div className={styles.container}>
         <motion.div
           className={styles.info}
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
+          initial={{ x: -80, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
           <h2>Contact Me</h2>
-          <p>I’m open to freelance, collaborations, or full-time work. Let’s connect!</p>
-          <p><strong>Email:</strong> fatou@example.com</p>
+          <p>
+            I’m open to freelance work, collaborations, or full-time roles.
+            Let’s connect!
+          </p>
+          <p><strong>Email:</strong>fatmbo03@outlook.com</p>
           <p>
             <strong>GitHub:</strong>{" "}
-            <a href="https://github.com/fantadiallo" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/fantadiallo"
+              target="_blank"
+              rel="noreferrer"
+            >
               github.com/fantadiallo
             </a>
           </p>
@@ -24,9 +31,9 @@ export default function ContactSection() {
 
         <motion.form
           className={styles.form}
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
+          initial={{ x: 80, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           onSubmit={(e) => {
             e.preventDefault();
             alert("Message sent!");
@@ -34,7 +41,7 @@ export default function ContactSection() {
         >
           <input type="text" placeholder="Your Name" required />
           <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <textarea placeholder="Your Message" rows="4" required></textarea>
           <button type="submit">Send Message</button>
         </motion.form>
       </div>
