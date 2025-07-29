@@ -1,0 +1,129 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+
+.packagesSection {
+  background: var(--dark-bg);
+  color: var(--light-text);
+  padding: 6rem 2rem;
+  text-align: center;
+
+  @include respond(md) {
+    padding: 4rem 1.5rem;
+  }
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: var(--accent-primary);
+  margin-bottom: 4rem;
+
+  @include respond(sm) {
+    font-size: 2rem;
+  }
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.packageCard {
+  background: var(--card-bg, #1e1e1e);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+
+  &:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(0, 255, 128, 0.2);
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+  }
+}
+
+.features {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+
+  li {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--light-text);
+  }
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3cff71; // vibrant green
+  background-color: rgba(60, 255, 113, 0.08); // soft green badge
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  align-self: flex-start;
+  margin-top: auto;
+  transition: background-color 0.3s ease;
+
+  @include respond(sm) {
+    align-self: center;
+  }
+
+  &:hover {
+    background-color: rgba(60, 255, 113, 0.15);
+  }
+}
+
+.addOns {
+  margin-top: 4rem;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.addOnsTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.addOnsList {
+  list-style: none;
+  padding: 0;
+
+  li {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    color: var(--light-text);
+
+    strong {
+      color: #3cff71; // match the price color
+    }
+  }
+}
+
