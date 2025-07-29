@@ -13,7 +13,7 @@ export default function Hero() {
           <h2 className={styles.title}>I Design & Build Websites</h2>
 
           <p className={styles.subheading}>
-            Front-End Developer & Freelancer · Based in Norway  
+            Front-End Developer & Freelancer · ( Norwegian )  
             <br />
             Graduate – Noroff Front-End Development, 2025
           </p>
