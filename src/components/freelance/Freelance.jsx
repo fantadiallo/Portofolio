@@ -10,14 +10,14 @@ const packages = [
   },
   {
     title: "Landing Page",
-    description: "1-page scrollable site — perfect for promos or events.",
+    description: "1 page scrollable site — perfect for promos or events.",
     features: ["Responsive design", "CTA & contact", "Delivered fast"],
     price: "€100 – €1,000",
   },
   {
     title: "Portfolio Website",
     description: "Clean personal site to showcase projects and skills.",
-    features: ["1-page or multi-section", "Framer Motion animations", "SEO-ready"],
+    features: ["1 page or multi-section", "Framer Motion animations", "SEO-ready"],
     price: "€150 – €1,500",
   },
   {
