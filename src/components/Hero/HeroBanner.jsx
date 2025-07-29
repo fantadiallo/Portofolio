@@ -19,8 +19,8 @@ export default function Hero() {
           </p>
 
           <p className={styles.description}>
-            I create responsive, user-friendly websites for businesses, creators, and online stores.
-            From simple landing pages to full eCommerce platforms — I turn ideas into beautiful websites that convert.
+            I create responsive, user friendly websites for businesses, creators, and online stores.
+            From simple landing pages to full eCommerce platforms I turn ideas into beautiful websites that convert.
           </p>
 
           <div className={styles.ctaGroup}>
