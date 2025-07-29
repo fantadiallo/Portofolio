@@ -67,7 +67,7 @@ export default function Project3() {
             <FaGithub /> Repo
           </a>
           <a
-            href="https://petadopt.netlify.app/"
+            href="https://mypetsemester2.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >

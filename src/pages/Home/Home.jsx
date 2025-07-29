@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import ContactSection from "../../components/Contact/Contact";
 import Hero from "../../components/Hero/HeroBanner";
 import Project1 from "../../components/Project1/Project1";
-import Project2 from "../../components/Project2/Project2";
 import Project3 from "../../components/Project3/Project3";
 import SkillsSection from "../../components/Skills/Skills";
 import styles from "./Home.module.scss";
+import Freelance from "../../components/freelance/freelance";
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -32,13 +32,11 @@ export default function Home() {
       <section id="skills">
         <SkillsSection />
       </section>
-
+      <section id="packages">
+  <Freelance />
+</section>
       <section id="project1">
         <Project1 />
-      </section>
-
-      <section id="project2">
-        <Project2 />
       </section>
 
       <section id="project3">
