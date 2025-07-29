@@ -7,6 +7,7 @@ import SkillsSection from "../../components/Skills/Skills";
 import styles from "./Home.module.scss";
 import Freelance from "../../components/freelance/freelance";
 
+
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
