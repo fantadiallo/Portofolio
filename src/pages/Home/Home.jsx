@@ -5,7 +5,7 @@ import Project1 from "../../components/Project1/Project1";
 import Project3 from "../../components/Project3/Project3";
 import SkillsSection from "../../components/Skills/Skills";
 import styles from "./Home.module.scss";
-import Freelance from "../../components/freelance/freelance";
+import Freelance from "../../components/freelance/Freelance";
 
 
 export default function Home() {
